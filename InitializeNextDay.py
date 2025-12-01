@@ -24,7 +24,7 @@ title = input()
 f = open(f"Day{daynum}_{title}.py", 'w')
 f.writelines(["get_input = lambda filename: [l.strip('\\n') for l in open(filename,'r+',encoding='utf-8').readlines()]\n\n", 
              'datafile = "test"\n',
-             f'datafile = "# Day{daynum}Data"\n\n',
+             f'# datafile = "Day{daynum}Data"\n\n',
              'raw = get_input(f"data/{datafile}.txt")\n\n'])
 
 dataResponse = requests.get(f"https://adventofcode.com/2025/day/{daynum}/input", cookies={'session': sessionId})
